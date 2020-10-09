@@ -10,7 +10,7 @@ class FunctionsController < ApplicationController
 
   def create
     @function = Function.new(function_params)
-    @fmea = Fmea.first
+    @fmea = Fmea.find(params["function"]["fmea_id"])
     @function.fmea = @fmea
     if @function.save
       redirect_to(edit_fmea_path(@fmea))
