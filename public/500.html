@@ -3,9 +3,10 @@
 <head>
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
   .error-page-custom {
-    background-color: #EFEFEF;
+    background-color: #fFfFfF;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -20,12 +21,6 @@
 
   .error-page-custom div.dialog > div {
     border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
     background-color: white;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
@@ -33,14 +28,14 @@
 
   .error-page-custom h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #3c3c3c;
     line-height: 1.5em;
   }
 
   .error-page-custom div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
-    background-color: #F7F7F7;
+    background-color: #FfFfFf;
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
@@ -53,24 +48,58 @@
   }
 
   .error-page-custom-container {
-    width: 650px;
-    padding: 28px;
+    padding: 28px !important;
     border-radius: 20px;
     border: 1px solid #c3c3c3;
     margin: 40px auto;
   }
+
+  .error-page-custom-button {
+    background-color: #64BC7C;
+    color: #3c3c3c;
+  }
+
+  .blue-bar {
+    min-height: 50px;
+    padding: 8px 16px;
+    width: 100%;
+    background-color: #0C2373;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .logo {
+   transition: all .2s ease-in-out;
+  }
+
+
+
+  .logo:hover {
+    transform: scale(1.07);
+  }
+
+
+
   </style>
 </head>
 
 <body class="error-page-custom">
-  <!-- This file lives in public/500.html -->
+  <!-- This file lives in public/404.html -->
+  <div class="blue-bar">
+    <a href="/"><img class="logo" src="FMEAlite_logo_copy.svg" alt=""></a>
+  </div>
   <div class="dialog">
     <div class="error-page-custom-container">
-      <h1> Error 500. Something went wrong on our server.</h1>
-      <p>Contact the customer support.</p>
+      <h1><strong>FMEA.Lite</strong></h1>
+      <h1> Error 500. An internal server error occured.</h1>
+      <p>Something went wrong on our side.</p>
       <br>
-      <a href="/" class="btn btn-success btn-stretch">Go Back to Homepage</a>
+      <a href="/" class="btn btn-success error-page-custom-button">Go Back to Homepage</a>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
