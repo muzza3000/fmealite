@@ -12,7 +12,6 @@ export default class extends Controller {
 
   connect() {
     console.log("--> edit fmea controller connected")
-    removeButtons(this.cardTargets, this.actionMenuTarget);
    }
 
    createFailureMode () {
@@ -48,6 +47,10 @@ export default class extends Controller {
       updateActionMenu(this.selectedItemType, this.actionMenuTarget, this.cardTargets)
     }
   };
+
+  manageButtons() {
+    removeButtons(this.cardTargets, this.actionMenuTarget);
+  }
 
   // Getters and setters
   get selectedItemId() {

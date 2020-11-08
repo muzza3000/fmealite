@@ -43,6 +43,8 @@ const updateActionMenu = (itemType, actionMenu, elements) => {
   };
 };
 
+
+
 const removeButtons = (elements, actionMenu) => {
   // grab buttons
   const functionButton = actionMenu.querySelector('#add-function-button');
@@ -51,9 +53,6 @@ const removeButtons = (elements, actionMenu) => {
   const effectButton = actionMenu.querySelector('#add-effect-button');
   const deleteButton = actionMenu.querySelector('#delete-button');
   const clearSelectionButton = actionMenu.querySelector('#clear-selection-button');
-
-  // Listen to all mouseclicks
-  document.addEventListener("click", (event) => {
     let anItemIsSelected = false;
 
   // Check if there are any selected elements
@@ -64,7 +63,6 @@ const removeButtons = (elements, actionMenu) => {
     });
 
   // remove the delete button if there isn't any selected element
-
     if (anItemIsSelected === false) {
       functionButton.classList.remove("hidden-button")
       failureModeButton.classList.add("hidden-button")
@@ -73,7 +71,6 @@ const removeButtons = (elements, actionMenu) => {
       deleteButton.classList.add("hidden-button")
       clearSelectionButton.classList.add("hidden-button")
     };
-  });
 };
 
 

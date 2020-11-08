@@ -3,7 +3,7 @@
 <!-- -------------- Edit Fmea – Tree Page ------------------ -->
 
 <%= render 'fmeas/edit_fmea/fmea_header', fmea: @fmea %>
-<div class="edit-fmea-container" data-controller="edit-fmea" data-edit-fmea-selected-item-type="" data-edit-fmea-selected-item-id="">
+<div class="edit-fmea-container" data-controller="edit-fmea" data-edit-fmea-selected-item-type="" data-edit-fmea-selected-item-id="" data-target="background" data-action="click->edit-fmea#manageButtons">
   <div class="all-editing-page-elements">
     <div>
       <%= render 'fmeas/edit_fmea/add_cards', fmea: @fmea %>
