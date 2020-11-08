@@ -1,6 +1,6 @@
 import { Controller } from "stimulus"
-import { toggleClass, itemPath, clearSelection, removeButtons } from "helpers/index"
-import { updateActionMenu } from "helpers/action_menu"
+import { toggleClass, itemPath, clearSelection } from "helpers/index"
+import { updateActionMenu, removeButtons  } from "helpers/action_menu"
 
 export default class extends Controller {
   static targets = ["card", "failuremodeForm", "causeForm", "effectForm", "delete", "actionMenu", "background"]
