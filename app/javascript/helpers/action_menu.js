@@ -1,4 +1,4 @@
-const updateActionMenu = (itemType, actionMenu) => {
+const updateActionMenu = (itemType, actionMenu, elements) => {
 
   // grab buttons
   const functionButton = actionMenu.querySelector('#add-function-button');
@@ -40,14 +40,6 @@ const updateActionMenu = (itemType, actionMenu) => {
     effectButton.classList.add("hidden-button")
     deleteButton.classList.remove("hidden-button")
     clearSelectionButton.classList.remove("hidden-button")
-  };
-  if (itemType === "") {
-    functionButton.classList.remove("hidden-button")
-    failureModeButton.classList.add("hidden-button")
-    causeButton.classList.add("hidden-button")
-    effectButton.classList.add("hidden-button")
-    deleteButton.classList.add("hidden-button")
-    clearSelectionButton.classList.add("hidden-button")
   };
 };
 

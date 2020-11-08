@@ -1,9 +1,9 @@
 import { Controller } from "stimulus"
-import { toggleClass, itemPath, clearSelection } from "helpers/index"
+import { toggleClass, itemPath, clearSelection, removeButtons } from "helpers/index"
 import { updateActionMenu } from "helpers/action_menu"
 
 export default class extends Controller {
-  static targets = ["card", "failuremodeForm", "causeForm", "effectForm", "delete", "actionMenu"]
+  static targets = ["card", "failuremodeForm", "causeForm", "effectForm", "delete", "actionMenu", "background"]
 
   initialize() {
     const selectedItemType = this.data.get("selected-item-type")
@@ -12,6 +12,7 @@ export default class extends Controller {
 
   connect() {
     console.log("--> edit fmea controller connected")
+    removeButtons(this.cardTargets, this.actionMenuTarget);
    }
 
    createFailureMode () {
@@ -39,14 +40,12 @@ export default class extends Controller {
     this.selectedItemType = event.currentTarget.dataset.cardType;
     this.selectedItemId = event.currentTarget.dataset.id;
 
-    // Update the action menu
-    updateActionMenu(this.selectedItemType, this.actionMenuTarget);
-
     if (this.selectedItemType === "") {
       clearSelection(this.cardTargets);
     } else {
       // Apply the focus logic
       toggleClass(event.currentTarget, this.cardTargets);
+      updateActionMenu(this.selectedItemType, this.actionMenuTarget, this.cardTargets)
     }
   };
 

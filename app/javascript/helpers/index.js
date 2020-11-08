@@ -94,4 +94,36 @@ const itemPath = (itemType) => {
   };
 };
 
-export { toggleClass, itemPath, clearSelection }
+const removeButtons = (elements, actionMenu) => {
+  // grab buttons
+  const functionButton = actionMenu.querySelector('#add-function-button');
+  const failureModeButton = actionMenu.querySelector('#add-failure-mode-button');
+  const causeButton = actionMenu.querySelector('#add-cause-button');
+  const effectButton = actionMenu.querySelector('#add-effect-button');
+  const deleteButton = actionMenu.querySelector('#delete-button');
+  const clearSelectionButton = actionMenu.querySelector('#clear-selection-button');
+  document.addEventListener("click", (event) => {
+    console.log("works:)")
+    let anItemIsSelected = false;
+
+    elements.forEach((e) => {
+      if (e.classList.contains(`selected-${e.dataset.cardType}`)) {
+        anItemIsSelected = true;
+      };
+    });
+
+    console.log(anItemIsSelected);
+
+    if (anItemIsSelected === false) {
+      functionButton.classList.remove("hidden-button")
+      failureModeButton.classList.add("hidden-button")
+      causeButton.classList.add("hidden-button")
+      effectButton.classList.add("hidden-button")
+      deleteButton.classList.add("hidden-button")
+      clearSelectionButton.classList.add("hidden-button")
+    };
+  });
+};
+
+
+export { toggleClass, itemPath, clearSelection, removeButtons }
