@@ -94,4 +94,5 @@ const itemPath = (itemType) => {
   };
 };
 
+
 export { toggleClass, itemPath, clearSelection }

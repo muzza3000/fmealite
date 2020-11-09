@@ -1,12 +1,19 @@
+<!-- Edit Fmea - Tree Page / Failure Mode -->
+<!-- Here, the div structures for all failure modes is coded -->
+
 <div class="one-failure-mode">
   <div class="one-failure-mode-left">
-  <div class="fm-left"></div>
+  <div class="fm-left" ></div>
   <div class="fm-right">
+
+    <!-- Failure mode card -->
     <div class="fm-element">
       <%= render "fmeas/edit_fmea/card_structure", element: failure_mode %>
     </div>
     <div class="causes-structure">
-      <div class="cause-left"></div>
+      <div class="cause-left" ></div>
+
+      <!-- Cause card for the failure mode -->
       <div class="cause-right">
         <% causes = failure_mode.causes %>
         <% causes = order_and_select(causes) %>
@@ -17,10 +24,11 @@
         <% end %>
       </div>
     </div>
-    <div class="cause-right-bottom"></div>
+    <div class="cause-right-bottom" ></div>
   </div>
   </div>
 
+<!-- Logic to correctly adjust the lines -->
   <% counter = 0 %>
   <% effects = failure_mode.effects %>
   <% effects = order_and_select(effects) %>
@@ -30,14 +38,16 @@
       <div class="effects-top"></div>
       <div class="effects-bottom">
         <div class="effects-bottom-left">
-          <div class="effects-bottom-left-top"></div>
-          <div class="effects-bottom-left-bottom"></div>
+          <div class="effects-bottom-left-top" ></div>
+          <div class="effects-bottom-left-bottom" ></div>
         </div>
+
+        <!-- Effect Card for the failure mode -->
         <div class="effects-bottom-right">
           <% effects.each do |effect| %>
             <% counter += 1 %>
             <% if counter > 1 %>
-              <div style="height: 10px;"></div>
+              <div style="height: 10px;" ></div>
             <% end %>
               <div class="card-structure-bottom-right">
                 <%= render "fmeas/edit_fmea/card_content", element: effect  %>
